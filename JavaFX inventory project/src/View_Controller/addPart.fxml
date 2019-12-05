@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: #d3d3d3;">
+            <children>
+                <Label layoutX="25.0" layoutY="36.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="104.0" style="-fx-font-size: 24px;" text="Add Part" wrapText="true" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="478.0" />
+                <RadioButton fx:id="addOutSourced" layoutX="196.0" layoutY="36.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#outSourcedDisplay" prefHeight="25.0" prefWidth="130.0" selected="true" text="Outsourced" AnchorPane.leftAnchor="196.0" AnchorPane.rightAnchor="274.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="invType" />
+               </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="addInHouse" layoutX="356.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#inHouseDisplay" prefHeight="25.0" prefWidth="96.0" text="In-house" toggleGroup="$invType" AnchorPane.leftAnchor="356.0" AnchorPane.rightAnchor="134.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </RadioButton>
+                <GridPane alignment="CENTER" layoutX="54.0" layoutY="93.0" prefHeight="245.0" prefWidth="492.0" AnchorPane.bottomAnchor="162.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="54.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="177.0" minWidth="10.0" prefWidth="165.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="183.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="107.0" minWidth="10.0" prefWidth="65.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="75.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label fx:id="addPartIDLabel" text="ID">
+                            <GridPane.margin>
+                                <Insets left="2.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label fx:id="addPartNameLabel" text="Name" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets left="2.0" />
+                            </GridPane.margin>
+                        </Label>
+                        <Label fx:id="addPartInvLabel" text="INV" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                            <padding>
+                                <Insets left="2.0" right="2.0" />
+                            </padding>
+                        </Label>
+                        <Label fx:id="addPartPriceLabel" text="Price/Cost" GridPane.rowIndex="3">
+                            <padding>
+                                <Insets left="2.0" />
+                            </padding>
+                        </Label>
+                        <Label fx:id="addPartMaxLabel" text="Max" textAlignment="CENTER" GridPane.rowIndex="4">
+                            <padding>
+                                <Insets left="2.0" />
+                            </padding>
+                        </Label>
+                        <Label fx:id="radioButtonLabel" prefHeight="30.0" prefWidth="181.0" text="Company Name" GridPane.rowIndex="5">
+                            <padding>
+                                <Insets left="2.0" />
+                            </padding>
+                        </Label>
+                        <TextField fx:id="addPartNamePrompt" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="addPartInvPrompt" promptText="INV" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="addPartPricePrompt" promptText="Price/Cost" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="addPartMaxPrompt" promptText="Max" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="addPartMinPrompt" promptText="Min" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </TextField>
+                        <Label fx:id="addPartMinLabel" text="Min" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                            <padding>
+                                <Insets left="4.0" />
+                            </padding>
+                        </Label>
+                        <TextField fx:id="radioButtonLabelPrompt" promptText="Company Name" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="addPartIDPrompt" promptText="ID" GridPane.columnIndex="1">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                </GridPane>
+                <Button fx:id="addPartSaveButton" layoutX="231.0" layoutY="381.0" mnemonicParsing="false" onMouseClicked="#saveAddPart" prefHeight="41.0" prefWidth="138.0" style="-fx-font-size: 18px;" text="SAVE" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="231.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="addPartCancel" layoutX="402.0" layoutY="381.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addPartCancelCall" prefHeight="40.0" prefWidth="144.0" style="-fx-font-size: 18px;" text="CANCEL" AnchorPane.leftAnchor="402.0" AnchorPane.rightAnchor="54.0">
+                    <font>
+                        <Font name="Calibri Light" size="10.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

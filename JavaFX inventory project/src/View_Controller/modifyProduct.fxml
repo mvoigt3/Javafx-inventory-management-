@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.ModifyProductController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #d3d3d3;" stylesheets="@styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane layoutX="20.0" layoutY="20.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="1147.0" style="-fx-border-color: black; -fx-border-radius: 20px;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                    <children>
+                        <Button fx:id="deleteAssoc" layoutX="657.0" layoutY="419.0" mnemonicParsing="false" onMouseClicked="#assocDelete" prefHeight="40.0" prefWidth="100.0" text="DELETE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+                        <TextField fx:id="stockPrompt" layoutX="197.0" layoutY="196.0" prefHeight="25.0" prefWidth="74.0" promptText="INV" AnchorPane.bottomAnchor="339.0" AnchorPane.leftAnchor="200.0" />
+                        <TextField fx:id="searchPartField" layoutX="780.0" layoutY="18.0" onMouseClicked="#clearText" prefHeight="25.0" prefWidth="157.0" promptText="Case Sensitive" />
+                        <Label layoutX="99.0" layoutY="271.0" text="MIN" AnchorPane.bottomAnchor="259.0" AnchorPane.leftAnchor="99.0">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="290.0" layoutY="273.0" prefHeight="26.0" prefWidth="56.0" text="MAX" AnchorPane.bottomAnchor="263.0" AnchorPane.leftAnchor="290.0" AnchorPane.topAnchor="273.0">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="92.0" layoutY="113.0" text="ID" AnchorPane.bottomAnchor="420.0" AnchorPane.leftAnchor="100.0">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="104.0" layoutY="234.0" text="PRICE" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="100.0">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="104.0" layoutY="33.0" prefHeight="47.0" prefWidth="240.0" style="-fx-font-size: 24pt;" text="Modify Product" AnchorPane.leftAnchor="103.0">
+                            <font>
+                                <Font size="36.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="94.0" layoutY="154.0" text="NAME" AnchorPane.bottomAnchor="380.0" AnchorPane.leftAnchor="100.0">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="idPrompt" layoutX="197.0" layoutY="113.0" promptText="Disabled" AnchorPane.leftAnchor="200.0" />
+                        <Button fx:id="searchPart" layoutX="657.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#searchPart" prefHeight="40.0" prefWidth="109.0" text="SEARCH">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="addPartMod" layoutX="658.0" layoutY="208.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#addPart" prefHeight="40.0" prefWidth="100.0" text="ADD">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="saveModifiedButton" layoutX="848.0" layoutY="475.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#saveModify" prefHeight="40.0" prefWidth="100.0" text="SAVE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+                        <TableView fx:id="newAssocTable" editable="true" layoutX="658.0" layoutY="264.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="140.0" prefWidth="400.0" AnchorPane.rightAnchor="102.0">
+                            <columns>
+                                <TableColumn fx:id="assocIdCol" prefWidth="100.0" text="Part ID" />
+                                <TableColumn fx:id="assocNameCol" prefWidth="100.0" text="Part Name" />
+                                <TableColumn fx:id="assocStockCol" prefWidth="100.0" text="Inventory Level" />
+                                <TableColumn fx:id="assocPriceCol" prefWidth="100.0" text="Price/Per Unit" />
+                            </columns>
+                        </TableView>
+                        <TableView fx:id="partsTable" layoutX="658.0" layoutY="56.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="400.0">
+                            <columns>
+                                <TableColumn fx:id="partIdCol" prefWidth="100.0" text="Part ID " />
+                                <TableColumn fx:id="partNameCol" prefWidth="100.0" text="Part Name" />
+                                <TableColumn fx:id="stockPartCol" prefWidth="100.0" text="Inventory Level" />
+                                <TableColumn fx:id="pricePartCol" prefWidth="100.0" text="Price/Per Unit" />
+                            </columns>
+                        </TableView>
+                        <Button fx:id="cancelModify" layoutX="957.0" layoutY="475.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#cancelModifyProduct" prefHeight="40.0" prefWidth="141.0" text="CANCEL">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+                        <Label layoutX="105.0" layoutY="194.0" prefHeight="27.0" prefWidth="35.0" text="INV" AnchorPane.bottomAnchor="340.0" AnchorPane.leftAnchor="100.0">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="namePrompt" layoutX="202.0" layoutY="152.0" promptText="NAME" AnchorPane.bottomAnchor="383.0" AnchorPane.leftAnchor="202.0" />
+                        <TextField fx:id="pricePrompt" layoutX="197.0" layoutY="236.0" prefHeight="25.0" prefWidth="74.0" promptText="PRICE" AnchorPane.bottomAnchor="300.0" AnchorPane.leftAnchor="200.0" />
+                        <TextField fx:id="minPrompt" layoutX="197.0" layoutY="273.0" prefHeight="25.0" prefWidth="74.0" promptText="MIN" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="200.0" />
+                        <TextField fx:id="maxPrompt" layoutX="347.0" layoutY="273.0" prefHeight="25.0" prefWidth="74.0" promptText="MAX" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="350.0" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
